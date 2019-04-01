@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.SysStudentsMapper">
+
+    <select id="getStudents" resultType="com.pojo.SysStudents">
+        select *
+        from sys_students
+    </select>
+    <update id="updateStudentsById">
+        update sys_students
+        <set>
+            <if test="status != null and status !=''">
+                status = #{status},
+            </if>
+            <if test="snumber != null and snumber !=''">
+                snumber = #{snumber},
+            </if>
+            <if test="sname != null and sname !=''">
+                sname = #{sname},
+            </if>
+            <if test="sex != null and sex !=''">
+                sex = #{sex},
+            </if>
+            <if test="slevel != null and slevel !=''">
+                slevel = #{slevel},
+            </if>
+            <if test="siphone != null and siphone !=''">
+                siphone = #{siphone},
+            </if>
+            <if test="sway != null and sway !=''">
+                sway = #{sway},
+            </if>
+            <if test="sprogress != null and sprogress !=''">
+                sprogress = #{sprogress},
+            </if>
+            <if test="snextdate != null and snextdate !=''">
+                snextdate = #{snextdate},
+            </if>
+            <if test="stype != null and stype !=''">
+                stype = #{stype},
+            </if>
+            <if test="steacher != null and steacher !=''">
+                steacher = #{steacher},
+            </if>
+            <if test="updated != null and updated !=''">
+                updated = #{updated},
+            </if>
+            <if test="sestimate != null and sestimate !=''">
+                sestimate = #{sestimate}
+            </if>
+        </set>
+        where sid = #{sid}
+    </update>
+</mapper>
